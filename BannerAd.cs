@@ -21,7 +21,7 @@ public class BannerAd : MonoBehaviour {
         if (bannerAd == null)
         {
             bannerAd = this;
-            string adUnitId = "ca-app-pub-3940256099942544~3347511713";
+            string adUnitId = "";
             MobileAds.Initialize(adUnitId);
             CreateBannerAd();
             CreateInterAd();
@@ -43,7 +43,7 @@ public class BannerAd : MonoBehaviour {
 
 
 
-		bannerView = new BannerView("ca-app-pub-3940256099942544/6300978111", AdSize.Banner, AdPosition.Bottom);
+		bannerView = new BannerView("", AdSize.Banner, AdPosition.Bottom);
 		AdRequest request = new AdRequest.Builder().Build();
 		bannerView.LoadAd(request);
 		bannerView.Show();
@@ -72,7 +72,7 @@ public class BannerAd : MonoBehaviour {
 
     private void CreateInterAd()
     {
-        interAd = new InterstitialAd("ca-app-pub-3940256099942544/1033173712");
+        interAd = new InterstitialAd("");
         interAd.LoadAd(new AdRequest.Builder().Build());
         interAd.OnAdClosed += LoadInterAd;
     }
